@@ -111,6 +111,90 @@ header {
   background: #fff !important;
   color: #0d7c7e !important;
 }
+.poster {
+  height: 762px;
+}
+.poster img {
+  width: 100%;
+  height: 762px;
+  object-fit: cover;
+}
+/* shop */
+.shop-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #0d7c7e;
+  margin: 40px 0 20px;
+  position: relative;
+}
+
+.container {
+  width: 70%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.product {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 20px;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img-product {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.tit {
+  font-size: 18px;
+  color: #333;
+  margin: 15px 10px 10px 10px;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 20px;
+  color: #0d7c7e;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-shop {
+  background-color: #0d7c7e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-shop:hover {
+  background-color: red;
+}
 
 /* FOOTER */
 footer {
@@ -206,6 +290,14 @@ footer {
     margin: 0 auto;
     padding: 0;
   }
+  .poster {
+    width: 100vw;
+    height: auto;
+  }
+  .poster img {
+    width: 100vw;
+    height: 200px;
+  }
   .footer {
     width: 100vw;
     height: auto;
@@ -213,5 +305,65 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.fade-in {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+@media (max-width: 768px) {
+  .shop-title {
+    font-size: 28px;
+    margin: 30px 0 15px;
+  }
+
+  .shop-title::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* hiển thị 2 sản phẩm / dòng */
+    gap: 10px;
+  }
+
+  .img-product {
+    width: 150px;
+    height: 180px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product {
+    text-align: center;
+  }
+
+  .btn-shop {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .tit {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 15px;
   }
 }
